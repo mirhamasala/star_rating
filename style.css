@@ -1,0 +1,29 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: no-wrap;
+    margin: 0;
+}
+
+.stars {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.stars > * {
+    color: hsla(44, 95%, 55%, 1.00);
+    background: linear-gradient(#ff8a00, #da1b60);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 60px;
+    padding: 0 15px;
+}
+
+@media only screen and (max-width: 500px) {
+    .stars > * {
+        font-size: 40px;
+        padding: 0 10px;
+    }
+}
