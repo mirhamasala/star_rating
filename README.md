@@ -19,3 +19,4 @@ A snippet of information to make this a little bit easier, although it really de
 ## Resources
 - [Lars's Working Example](https://datene.github.io/star_rating/)
 - [Gradient Text](https://css-tricks.com/snippets/css/gradient-text/)
+- [Five star rating field with animated hover effect](https://codepen.io/blixt/pen/QyNXEp)
