@@ -48,3 +48,9 @@ body {
 .stars:hover i:nth-child(5) {
   transition-delay: 120ms;
 }
+
+@media only screen and (max-width: 500px) {
+	body {
+		font-size: 36px;
+	}
+}
