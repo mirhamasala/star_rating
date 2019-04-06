@@ -1,4 +1,7 @@
 /*Text Gradient*/
+--amaranth: hsl(25, 93%, 53%);
+--ecstasy: hsl(344, 73%, 51%);
+--tangerine: hsl(48, 100%, 50%);
 
 background: linear-gradient(var(--amaranth), var(--ecstasy));
 -webkit-background-clip: text;

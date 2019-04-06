@@ -1,9 +1,7 @@
 :root {
-	--amaranth: hsla(25, 93%, 53%, 1.00);
-	--ecstasy: hsla(344, 73%, 51%, 1.00);
-	--cinder: hsla(260, 23%, 7%, 1);
-	--tangerine: hsla(48, 100%, 50%, 1.00);
-	--medium-spring-green: hsla(154, 99%, 55%, 1.00);
+	--background: hsl(260, 23%, 7%);
+	--glow-dark: hsl(154, 99%, 55%);
+	--pale-light: hsl(164, 67%, 70%);
 }
 
 body {
@@ -13,7 +11,7 @@ body {
     align-items: center;
     margin: 0;
     font-size: 60px;
-    background: var(--cinder);
+    background: var(--background);
 }
 
 .stars {
@@ -24,17 +22,15 @@ body {
 
 .stars i, .stars i:hover ~ i {
     padding: 0 15px;
-    color: var(--medium-spring-green);
-    opacity: 0.5;
+    color: var(--pale-light);
     text-shadow: none;
     transition: color 200ms, text-shadow 200ms, opacity 200ms;
     transition-delay: 0;
 }
 
 .stars:hover i {
-  color: var(--medium-spring-green);
-  opacity: 1;
-  text-shadow: var(--medium-spring-green) 0 0 20px;
+  color: var(--glow-dark);
+  text-shadow: var(--glow-dark) 0 0 20px;
 }
 
 .stars:hover i:nth-child(2) {
