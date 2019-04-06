@@ -20,7 +20,7 @@ body {
     cursor: pointer;
 }
 
-.stars i, .stars i:hover ~ i {
+.stars i, .stars i:hover ~ i, .rated .fa-star.active ~ i {
     padding: 0 5px;
     color: var(--pale-light);
     text-shadow: none;
@@ -28,7 +28,7 @@ body {
     transition-delay: 0;
 }
 
-.stars:hover i {
+.stars:hover i, .stars i.fa-star.active, .rated .fa-star {
   color: var(--glow-dark);
   text-shadow: var(--glow-dark) 0 0 20px;
 }
