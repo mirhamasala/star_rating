@@ -21,7 +21,7 @@ body {
 }
 
 .stars i, .stars i:hover ~ i {
-    padding: 0 15px;
+    padding: 0 5px;
     color: var(--pale-light);
     text-shadow: none;
     transition: color 200ms, text-shadow 200ms;
