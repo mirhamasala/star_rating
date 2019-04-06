@@ -24,7 +24,7 @@ body {
     padding: 0 15px;
     color: var(--pale-light);
     text-shadow: none;
-    transition: color 200ms, text-shadow 200ms, opacity 200ms;
+    transition: color 200ms, text-shadow 200ms;
     transition-delay: 0;
 }
 
