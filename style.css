@@ -28,7 +28,7 @@ body {
     transition-delay: 0;
 }
 
-.stars:hover i, .stars i.fa-star.active, .rated .fa-star {
+.stars:hover i, .rated .fa-star {
   color: var(--glow-dark);
   text-shadow: var(--glow-dark) 0 0 20px;
 }

@@ -93,7 +93,9 @@ html {
 - [x] general sibling selector
 
 ## Resources
+- [Buried hovers](https://css-tricks.com/little-css-stuff-newcomers-get-confused-about/#article-header-id-3)
 - [Child and Sibling Selectors](https://css-tricks.com/child-and-sibling-selectors/)
+- [CSS general sibling combinator (~) not working with negation pseudo-class (:not)](https://stackoverflow.com/questions/19015924/css-general-sibling-combinator-not-working-with-negation-pseudo-class-not)
 - [Five star rating field with animated hover effect](https://codepen.io/blixt/pen/QyNXEp)
 - [Gradient Text](https://css-tricks.com/snippets/css/gradient-text/)
 - [Lars's Working Example](https://datene.github.io/star_rating/)
