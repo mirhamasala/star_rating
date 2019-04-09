@@ -99,3 +99,4 @@ html {
 - [Five star rating field with animated hover effect](https://codepen.io/blixt/pen/QyNXEp)
 - [Gradient Text](https://css-tricks.com/snippets/css/gradient-text/)
 - [Lars's Working Example](https://datene.github.io/star_rating/)
+- [LocalStorage in JavaScript](https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36)
