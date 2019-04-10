@@ -87,6 +87,80 @@ html {
   height: 100%;
 }
 ```
+## Debrief
+
+### Starry Eyed - First Draft
+Many years ago, when the night fell, the sky would turn dark, and you couldn't even see as little as a sliver of light. Although the darkness was beautiful to look at, it was also dangerous. People who'd stare at it for too long would end up frozen in time, unable to move their focus. It was said that the darkness had absorbed their gaze and was now holding it in eternity.
+
+Then one day, a starry-eyed boy called Nine, came up with a brilliant plan. He would glue five pointy objects to the sky that looked pale in the light but would glow in the dark. This way, he reasoned, the people could still wallow in the dark but wouldn't have to worry about accidentally crossing over to the other side.
+
+#### Words in the wild
+- imagined a sky that would glow
+- keep the power of the dark, but at the same time
+- five luminous objects in the sky that would glow in the dark
+- So they could experience Infinity without having to leave Earth
+- they called him the stargazer
+- they called them the eternal skygazers
+- the dark side (of the force, of the moon)
+- slivers, slipping, permanent, gaze, eternally, glimpse, skygazer, stargazers, eternal darkness
+- It was said that the darkness had absorbed their gaze into a glimpse of eternity.
+- about losing their light
+
+### How to put stars in the sky - First Draft
+
+1. Set all stars in the starsbox to a base color
+
+    `.stars i { color: var(--pale-light) };`
+
+2. Make all stars in the box glow on hover
+
+  - We're using the descendant selector to select all descendants of the starbox–that is, all the `<i>` elements inside the element `<div class="stars">`.
+
+    `.stars:hover i { color: var(--glow-dark) };`
+
+3. Reset the stars that come after the currently hovered (and glowing) star to the base color
+
+  - The previous style rule makes all the stars light up on `hover` at the same time. But that's not exactly what we want. We'd like to reset the stars that come after the currently hovered star to the base color.
+
+  - To achieve this, we first select the currently hovered star with `.stars i:hover` (note the difference in syntax with the previous rule) and set it to `--pale-light` like so:
+
+    `.stars i:hover { color: var(--pale-light) };`
+
+  - Now that we have selected the currently hovered star, we want, in fact, to set the stars that come *after* it to the base color instead. The general sibling combinator will help us do just that:
+
+    `.stars i:hover ~ i { color: var(--pale-light) };`
+
+    This rule says, from the perspective of the currently hovered star, please change the color of all my sibling stars into the base color–and don't change me. And since the style is applied on the currently hovered star, the style keeps applying as you hover from right to left and left to right. It's kinda dazzling, don't you think?
+
+4. Repeat the same process but on click.
+
+   - When a star is clicked we want it to behave in the same way as it was a currently hovered star. To get there we need to add a couple of classes so that we can apply the same rules as for the currently hovered star, but are still able to differentiate from it. On click, we add the class `.rated` to the starbox and the class `.active` to the currently clicked star
+
+   - Then in our CSS stylesheet, we say: also apply the glow to all the stars that are in the rated star box with `rated i`
+
+```css
+    .stars:hover i, .rated i  {
+        color: var(--glow-dark);
+    }
+```
+
+- But again, we have to use the general sibling selector to say, please don't light up the stars beyond the clicked one with `.rated i .active ~ i`
+
+```css
+    .stars i:hover ~ i, .rated i.active ~ i {
+        color: var(--glow-dark);
+    }
+```
+
+5. Everything works fine now, except that we seem to have lost the ability to, after clicking on a star, light up the ones that come after it on hover.
+
+-	To fix this, we need to add a `:not` pseudo class to say when a star is clicked, please make all the stars glow in the dark, except for the ones that come after the currently clicked star, unless we are hovering over them
+
+```css
+    .stars i:hover ~ i, .rated:not(:hover) i.active ~ i {
+        color: var(--pale-light);
+    }
+```
 
 ## Look Up
 - [x] `text-shadow`
