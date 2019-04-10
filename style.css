@@ -20,7 +20,7 @@ body {
     cursor: pointer;
 }
 
-.stars i, .stars i:hover ~ i, .rated .fa-star.active ~ i {
+.stars i  {
     padding: 0 5px;
     color: var(--pale-light);
     text-shadow: none;
@@ -28,9 +28,14 @@ body {
     transition-delay: 0;
 }
 
-.stars:hover i, .rated .fa-star {
-  color: var(--glow-dark);
-  text-shadow: var(--glow-dark) 0 0 20px;
+.stars:hover i, .rated i  {
+    color: var(--glow-dark);
+    text-shadow: var(--glow-dark) 0 0 20px;
+}
+
+ .stars i:hover ~ i, .rated:not(:hover) i.active ~ i {
+    color: var(--pale-light);
+    text-shadow: none;
 }
 
 .stars:hover i:nth-child(2) {
