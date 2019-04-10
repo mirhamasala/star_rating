@@ -6,17 +6,17 @@
 
 body {
     min-height: 100vh;
+    min-width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    font-size: 60px;
     background: var(--background);
 }
 
 .stars {
     display: flex;
     flex-wrap: nowrap;
+    font-size: 60px;
     cursor: pointer;
 }
 
@@ -50,7 +50,7 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
-	body {
+	.stars {
 		font-size: 36px;
 	}
 }
