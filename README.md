@@ -126,15 +126,15 @@ Then one day, a starry-eyed boy called Nine, came up with a brilliant plan. He w
 
     `.stars i:hover { color: var(--pale-light) };`
 
-  - Now that we have selected the currently hovered star, we want, in fact, to set the stars that come *after* it to the base color instead. The general sibling combinator will help us do just that:
+  - Now that we have selected the currently hovered star, we need to set the stars that come *after* it to the base color. The general sibling combinator will help us do just that:
 
     `.stars i:hover ~ i { color: var(--pale-light) };`
 
-    This rule says, from the perspective of the currently hovered star, please change the color of all my sibling stars into the base color–and don't change me. And since the style is applied on the currently hovered star, the style keeps applying as you hover from right to left and left to right. It's kinda dazzling, don't you think?
+    This rule says, from the perspective of the currently hovered star, please change the color of all my sibling stars into the base color–but don't change me. And since the style is applied on the currently hovered star, the style keeps applying as you hover from right to left and left to right. It's kinda dazzling, don't you think?
 
-4. Repeat the same process but on click.
+4. Repeat the same process but on click
 
-   - When a star is clicked we want it to behave in the same way as it was a currently hovered star. To get there we need to add a couple of classes so that we can apply the same rules as for the currently hovered star, but are still able to differentiate from it. On click, we add the class `.rated` to the starbox and the class `.active` to the currently clicked star
+   - When a star is clicked we want it to behave the same way as a currently hovered star does. To get there we need to add a couple of classes so that we can apply the same rules as we did for the currently hovered star, but are at the same time still able to differentiate from it. On click, we'll add the class `.rated` to the starbox and the class `.active` to the currently clicked star in our JS file.
 
    - Then in our CSS stylesheet, we say: also apply the glow to all the stars that are in the rated star box with `rated i`
 
@@ -144,7 +144,7 @@ Then one day, a starry-eyed boy called Nine, came up with a brilliant plan. He w
     }
 ```
 
-- But again, we have to use the general sibling selector to say, please don't light up the stars beyond the clicked one with `.rated i .active ~ i`
+- And again, we have to use the general sibling selector to say, but please don't light up the stars beyond the clicked one with `.rated i .active ~ i`
 
 ```css
     .stars i:hover ~ i, .rated i.active ~ i {
@@ -152,15 +152,54 @@ Then one day, a starry-eyed boy called Nine, came up with a brilliant plan. He w
     }
 ```
 
-5. Everything works fine now, except that we seem to have lost the ability to, after clicking on a star, light up the ones that come after it on hover.
+5. Everything looks great, except that, after clicking on a star, the stars that come after it don't light up on hover any longer
 
--	To fix this, we need to add a `:not` pseudo class to say when a star is clicked, please make all the stars glow in the dark, except for the ones that come after the currently clicked star, unless we are hovering over them
+-	To fix this, we need to add a `:not` pseudo class to our previous rule, which will translate to the following: when we click on a star, make all the stars glow in the dark, except for the ones that come after the currently clicked star–unless we are hovering over those stars
 
 ```css
     .stars i:hover ~ i, .rated:not(:hover) i.active ~ i {
         color: var(--pale-light);
     }
 ```
+
+### Lars's advice on giving workshops in general and turning Starry Eyed into one
+For every dev workshop you give there are several things to consider:
+
+- Base knowledge of participants e.g. do you have to explain HTML and CSS basics at the start of your workshop or can you assume
+- Dev setup, do your participants share the same environment as you. How hard is it for them to get your same dev environment. Is it something they can do themselves in preparation?
+- Stable mix between theory and livecode
+- Choices in regards to format (e.g. Le Wagon lecture livecode is usually the exercise for the day, and after that the students start making it but you can also just supply theory and leave the challenge fully to the students)
+
+If you have three of these exercises that you can kind of power through with a group then you have a workshop I think.
+
+In the case of the star rating you can leave out the local storage because it’s not super consistent with the theme.
+
+---
+
+I’d imagine the Le Wagon format of lectures: one slide with like 3 lines max and then split up the logic.
+
+Something like this (but not this):
+
+**PHASE 1**
+Step 1:
+Make all the stars glow in the dark on hover
+
+Step 2:
+Make the stars following the current star pale on hover
+
+**PHASE 2**
+Step 1:
+Connect the JavaScript file with <script src=“js/all.js”></script>
+
+Step 2:
+Show the current rating in glow in the dark stars
+
+**PHASE 3**
+Step 1:
+With a rating in place, show the hover behavior on lower ratings
+
+Step 2:
+With a rating in place, show the hover behavior on higher ratings
 
 ## Look Up
 - [x] `text-shadow`
