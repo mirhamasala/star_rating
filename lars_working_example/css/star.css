@@ -1,0 +1,23 @@
+.stars {
+  font-size: 40px;
+  cursor: pointer;
+  display: flex;
+}
+
+.stars .fas {
+  color: var(--light-gray);
+  transform: scale(1);
+  transition: transform 200ms ease;
+  width: 65px;
+}
+.stars:hover .fas, .stars.rated .fas {
+  color: var(--gold);
+}
+
+.stars.rated:not(:hover) .fas.active ~ .fas, .stars .fas:hover ~ .fas {
+  color: var(--light-gray);
+}
+
+.stars .fas:active {
+  transform: scale(1.3);
+}
